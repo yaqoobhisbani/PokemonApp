@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen} from '@testing-library/react-native';
 import Error from './Error';
-import {STRINGS} from '@/constants/strings';
+import {STRINGS} from '../../constants/strings';
 
 describe('Error Component', () => {
   it('renders without crashing', () => {

@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Pokemons from '@/screens/Pokemons/Pokemons';
-import PokemonDetails from '@/screens/PokemonDetails/PokemonDetails';
+import Pokemons from '../screens/Pokemons/Pokemons';
+import PokemonDetails from '../screens/PokemonDetails/PokemonDetails';
 
 export type RootNativeStackParams = {
   Pokemons: undefined;

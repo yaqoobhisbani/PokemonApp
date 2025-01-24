@@ -1,6 +1,6 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import {STRINGS} from '@/constants/strings';
+import {STRINGS} from '../../constants/strings';
 
 const Error: React.FC = () => {
   return (
