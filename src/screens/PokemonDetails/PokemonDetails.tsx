@@ -3,9 +3,9 @@ import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootNativeStackParams} from '../../navigation/RootNavigator';
 import {useGetPokemonByIdQuery} from '../../api/pokemonApi';
-import Chip from '../../components/Chip';
-import Loader from '../../components/Loader';
-import Error from '../../components/Error';
+import Chip from '../../components/Chip/Chip';
+import Loader from '../../components/Loader/Loader';
+import Error from '../../components/Error/Error';
 
 type ScreenType = NativeStackScreenProps<
   RootNativeStackParams,

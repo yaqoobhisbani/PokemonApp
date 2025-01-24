@@ -1,10 +1,17 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
+import {STRINGS} from '@/constants/strings';
 
 const Error: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.errorText}>Something went wrong!</Text>
+      <Text
+        role="alert"
+        accessible
+        accessibilityLabel={STRINGS.SOMETHING_WENT_WRONG}
+        style={styles.errorText}>
+        {STRINGS.SOMETHING_WENT_WRONG}
+      </Text>
     </View>
   );
 };

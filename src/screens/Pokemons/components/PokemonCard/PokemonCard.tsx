@@ -5,11 +5,12 @@ type Props = {
   item: PokemonListItem;
   imageUrl: string;
   onPress: () => void;
+  testID?: string;
 };
 
-const PokemonCard: React.FC<Props> = ({item, imageUrl, onPress}) => {
+const PokemonCard: React.FC<Props> = ({item, imageUrl, onPress, testID}) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} testID={testID}>
       <View style={styles.container}>
         <Image source={{uri: imageUrl}} style={styles.image} />
         <Text style={styles.name}>{item.name}</Text>
