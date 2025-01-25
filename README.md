@@ -108,6 +108,8 @@ You should see the results like the screenshot below
 
 # Project Structure
 
+The project structure looks like below.
+
 ```
 ├── android
 ├── ios
