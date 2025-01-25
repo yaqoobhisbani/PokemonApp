@@ -4,7 +4,8 @@ import {renderWithProviders} from '../../util/testing';
 import Pokemons from './Pokemons';
 import {server} from '../../mocks/server';
 import {http, HttpResponse} from 'msw';
-import {BASE_URL} from '@env';
+
+const BASE_URL = process.env.BASE_URL;
 
 // Start and stop MSW server
 beforeAll(() => server.listen());

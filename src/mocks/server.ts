@@ -1,6 +1,7 @@
 import {http, HttpResponse} from 'msw';
 import {setupServer} from 'msw/native';
-import {BASE_URL} from '@env';
+
+const BASE_URL = process.env.BASE_URL;
 
 export const server = setupServer(
   http.get(`${BASE_URL}/pokemon`, () => {
