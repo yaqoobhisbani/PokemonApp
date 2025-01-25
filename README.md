@@ -4,9 +4,50 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+## Step 1: Cloning the repository
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+Run the following commmand to clone this project
+
+```sh
+git clone https://github.com/yaqoobhisbani/PokemonApp.git
+```
+
+## Step 2: Installing Dependecies
+
+Once you have cloned this project, navigate to this project in your terminal using cd command. For example `cd PokemonApp`.
+
+Then run the following command for installing dependencies
+
+```sh
+# Using npm
+npm install
+
+# OR using Yarn
+yarn
+```
+
+### iOS
+
+For iOS, you need to install CocoaPods dependencies also, which can be done using following commmand.
+
+```sh
+# Using NPX from root directly
+npx pod-install ios
+
+# OR
+cd ios
+pod install
+```
+
+You should have your dependencies install now.
+
+## Step 3: Running the app
+
+After installing dependencies, we can run the app using folllowing steps.
+
+First we need to start Metro, the JavaScript build tool for React Native.
+
+### 3.1: Start Metro server
 
 To start the Metro dev server, run the following command from the root of your React Native project:
 
@@ -14,11 +55,13 @@ To start the Metro dev server, run the following command from the root of your R
 # Using npm
 npm start
 
-# OR using Yarn
+# OR using yarn
 yarn start
 ```
 
-## Step 2: Build and run your app
+> **Note**: The start script is configured to use the `BASE_URL` environment variable. If you need to change it, please have a look at `start` script in `package.json` file.
+
+### 3.2: Build and run the app
 
 With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
 
@@ -28,70 +71,95 @@ With Metro running, open a new terminal window/pane from the root of your React 
 # Using npm
 npm run android
 
-# OR using Yarn
+# OR using yarn
 yarn android
 ```
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
 ```sh
 # Using npm
 npm run ios
 
-# OR using Yarn
+# OR using yarn
 yarn ios
 ```
 
 If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Congratulations! 🎉
 
-## Step 3: Modify your app
+You've successfully run this project. 🥳
 
-Now that you have successfully run the app, let's make changes!
+# Running Test Cases
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+This project is configured to use jest for test runner. Simply run the following command to run the test cases.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```sh
+# Using npm
+npm test
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+# OR using yarn
+yarn test
+```
 
-## Congratulations! :tada:
+You should see the results like the screenshot below
+![Jest](./docs//tests_screenshot.png)
 
-You've successfully run and modified your React Native App. :partying_face:
+# Project Structure
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```
+├── android
+├── ios
+├── src
+│   ├── App.tsx
+│   ├── api
+│   │   └── pokemonApi.ts
+│   ├── components
+│   │   ├── Chip
+│   │   │   ├── Chip.test.tsx
+│   │   │   └── Chip.tsx
+│   │   ├── Error
+│   │   │   ├── Error.test.tsx
+│   │   │   └── Error.tsx
+│   │   └── Loader
+│   │       ├── Loader.test.tsx
+│   │       └── Loader.tsx
+│   ├── constants
+│   │   └── strings.ts
+│   ├── mocks
+│   │   └── server.ts
+│   ├── navigation
+│   │   └── RootNavigator.tsx
+│   ├── redux
+│   │   └── store.ts
+│   ├── screens
+│   │   ├── PokemonDetails
+│   │   │   ├── PokemonDetails.test.tsx
+│   │   │   └── PokemonDetails.tsx
+│   │   └── Pokemons
+│   │       ├── Pokemons.test.tsx
+│   │       ├── Pokemons.tsx
+│   │       └── components
+│   │           └── PokemonCard
+│   │               ├── PokemonCard.test.tsx
+│   │               └── PokemonCard.tsx
+│   ├── types
+│   │   ├── declarations.d.ts
+│   │   ├── navigation.d.ts
+│   │   └── pokemonApi.d.ts
+│   └── util
+│       ├── helpers.ts
+│       └── testing.tsx
+├── Gemfile
+├── ReactotronConfig.ts
+├── app.json
+├── babel.config.js
+├── index.js
+├── jest.config.js
+├── metro.config.js
+├── msw.polyfills.js
+├── package-lock.json
+├── package.json
+└── tsconfig.json
+```
