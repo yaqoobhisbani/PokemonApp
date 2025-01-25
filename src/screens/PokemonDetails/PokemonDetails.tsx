@@ -1,11 +1,11 @@
 import {View, Text, ScrollView, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootNativeStackParams} from '../../navigation/RootNavigator';
 import {useGetPokemonByIdQuery} from '../../api/pokemonApi';
 import Chip from '../../components/Chip/Chip';
 import Loader from '../../components/Loader/Loader';
 import Error from '../../components/Error/Error';
+import {STRINGS} from '../../constants/strings';
 
 type ScreenType = NativeStackScreenProps<
   RootNativeStackParams,
@@ -28,22 +28,22 @@ const PokemonDetails: React.FC<ScreenType> = ({route}) => {
       />
 
       <View style={styles.row}>
-        <Text style={styles.label}>Name:</Text>
+        <Text style={styles.label}>{STRINGS.NAME_LABEL}</Text>
         <Text>{data?.name}</Text>
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.label}>Height:</Text>
+        <Text style={styles.label}>{STRINGS.HEIGHT_LABEL}:</Text>
         <Text>{data?.height}</Text>
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.label}>Weight:</Text>
+        <Text style={styles.label}>{STRINGS.WEIGHT_LABEL}</Text>
         <Text>{data?.weight}</Text>
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.label}>Types:</Text>
+        <Text style={styles.label}>{STRINGS.TYPES_LABEL}</Text>
         <View style={styles.typesContainer}>
           {data?.types.map(item => (
             <Chip label={item.type.name} key={item.type.name} />

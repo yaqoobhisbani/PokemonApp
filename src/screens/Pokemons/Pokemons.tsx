@@ -1,7 +1,6 @@
 import {FlatList, StyleSheet, SafeAreaView} from 'react-native';
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootNativeStackParams} from '../../navigation/RootNavigator';
 import {useGetPokemonsQuery} from '../../api/pokemonApi';
 import PokemonCard from './components/PokemonCard/PokemonCard';
 import Loader from '../../components/Loader/Loader';

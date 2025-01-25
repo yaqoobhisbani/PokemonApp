@@ -4,7 +4,7 @@ import {STRINGS} from '../../constants/strings';
 
 const Error: React.FC = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="error">
       <Text
         role="alert"
         accessible
