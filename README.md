@@ -12,7 +12,7 @@ Run the following commmand to clone this project
 git clone https://github.com/yaqoobhisbani/PokemonApp.git
 ```
 
-## Step 2: Installing Dependecies
+## Step 2: Installing Dependencies
 
 Once you have cloned this project, navigate to this project in your terminal using cd command. For example `cd PokemonApp`.
 
